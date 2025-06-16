@@ -1,0 +1,32 @@
+<nav class="side-menu" [ngClass]="{ open: visible() }">
+  
+  <div class="logo">
+    <img src="img/logo.png" alt="Logo" />
+    <button class="close-button" (click)="showMenu.set(false)">
+     <span>
+       <i class="fas fa-arrow-left"></i>
+     </span>
+    </button>
+  </div>
+  <ul>
+    <li>
+      <a routerLink="/dashboard" routerLinkActive="active" 
+        [routerLinkActiveOptions]="{ exact: true}">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/clients" routerLinkActive="active">
+        <i class="fas fa-user"></i>
+        <span>Clientes</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/selected-clients" routerLinkActive="active">
+        <i class="fas fa-user"></i>
+        <span>Clientes selecionados</span>
+      </a>
+    </li>
+  </ul>
+</nav>

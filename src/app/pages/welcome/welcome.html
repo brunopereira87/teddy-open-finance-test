@@ -1,0 +1,12 @@
+<main>
+  <h2>Olá, seja bem-vindo!</h2>
+
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <p-floatlabel variant="in">
+      <input type="text" id="name" pInputText formControlName="name"  />
+      <label for="name">Digite o seu nome:</label>
+    </p-floatlabel>
+    <p-button label="Entrar" type="submit" [disabled]="!form.valid" class="welcome-button" fluid="true"></p-button>
+  </form>
+</main>
+

@@ -1,0 +1,13 @@
+<div class="info-clients">
+  <p>
+    <strong>{{totalUsers}} clientes encontrados:</strong>
+  </p>
+  
+  <div class="page-selector">
+    <span>Clientes por página:</span>
+    <p-select
+      [options]="paginationOptions" optionLabel="label" optionValue="value"
+      [(ngModel)]="itemsPerPage" (ngModelChange)="first = 0"
+    />
+  </div>
+</div>

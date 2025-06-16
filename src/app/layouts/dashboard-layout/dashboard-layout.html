@@ -1,0 +1,10 @@
+<app-header (toggleSideMenu)="onToggleSideMenu()"></app-header>
+
+<app-side-menu [visible]="sidemenuVisible()"></app-side-menu>
+
+<main>
+  <section class="container">
+    <router-outlet></router-outlet>
+  </section>
+</main>
+

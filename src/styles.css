@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #000;
+}
+
+.welcome-button {
+  button {
+    height: 3.75rem;
+    font-size: 1.5rem;
+
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+.menu-button {
+  .p-button-icon {
+    font-size: 1.5rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &.active {
+    color: var(--p-primary-500);
+    border-bottom: 1px solid var(--p-primary-500);
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      border-color: var(--p-primary-300);
+      color: var(--p-primary-300);
+    }
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}

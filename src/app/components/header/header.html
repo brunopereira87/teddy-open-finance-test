@@ -1,0 +1,27 @@
+<header>
+  <p-button 
+    icon="pi pi-bars" (click)="onClickToggle()"
+    severity="secondary" text="true" class="menu-button"
+  >
+  </p-button>
+  <nav class="container">
+    <a routerLink="/dashboard">
+      <img src="img/logo.png" alt="Logo" />
+    </a>
+    <ul class="navigation-menu">
+      <li>
+        <a routerLink="/dashboard/clients" routerLinkActive="active">Clientes</a>
+      </li>
+      <li>
+        <a routerLink="/dashboard/selected-clients" routerLinkActive="active">Clientes selecionados</a>
+      </li>
+      <li>
+        <a (click)="logout()" href="#" routerLinkActive="active">Sair</a>
+      </li>
+    </ul>
+    <p class="username">
+      <span>Olá, </span>
+      <strong>{{ userName }}</strong> 
+    </p>
+  </nav>
+</header>
