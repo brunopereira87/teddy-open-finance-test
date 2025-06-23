@@ -1,13 +1,50 @@
 <div class="info-clients">
   <p>
-    <strong>{{totalUsers}} clientes encontrados:</strong>
+    <strong>{{totalUsers}} </strong>
+    <span>clientes encontrados:</span>
   </p>
   
   <div class="page-selector">
     <span>Clientes por página:</span>
     <p-select
       [options]="paginationOptions" optionLabel="label" optionValue="value"
-      [(ngModel)]="itemsPerPage" (ngModelChange)="first = 0"
+      [(ngModel)]="itemsPerPage" (ngModelChange)="onTotalItemPagesChange($event)"
     />
   </div>
 </div>
+
+<app-clients-list [clients]="users"></app-clients-list>
+
+<p-button 
+  class="create-client-button" label="Criar cliente" outlined="true" 
+  fluid="true" (onClick)="onCreateClient()">
+</p-button>
+<app-paginator
+  [itemsPerPage]="itemsPerPage" [totalPages]="totalPages" [currentPage]="currentPage" (setPage)="onPageChange($event)"
+></app-paginator>
+
+<p-dialog 
+  [header]="formTypeLabel + ' cliente'"
+  [modal]="true" [(visible)]="formVisible" [style]="{ width: '25rem' }"
+  (onHide)="onHideModalForm()"
+>
+
+  <app-client-form 
+    [formType]="formType" 
+    (onCreateOrEdit)="onCreateOrEdit()"
+    [userToEdit]="clientToEdit"
+    [formTypeLabel]="formTypeLabel"
+  ></app-client-form>
+</p-dialog>
+<p-dialog 
+  header="Excluir cliente"
+  [modal]="true" [(visible)]="modalDeleteIsVisible" 
+  (onHide)="onHideModalDelete()"
+>
+
+  <p>Você está prestes a excluir o cliente: {{ clientToDelete?.name}}</p>
+  <p-button 
+    class="create-client-button" label="Excluir cliente"  
+    fluid="true" (onClick)="onDeleteClient()">
+  </p-button>
+</p-dialog>

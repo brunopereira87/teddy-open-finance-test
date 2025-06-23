@@ -1,0 +1,26 @@
+<form [formGroup]="form" (submit)="onSubmit()">
+  <fieldset>
+    <input 
+      type="text" name="name" pInputText formControlName="name" 
+      placeholder="Digite o seu nome:" aria-label="Digite o seu nome:"
+      />
+  </fieldset>
+  <fieldset>
+    <input 
+      type="text" name="salary" pInputText formControlName="salary"
+      placeholder="Digite o salário:" aria-label="Digite o salário:"
+      appCurrencyMask
+      />
+  </fieldset>
+  <fieldset>
+    <input 
+      type="text" name="companyValuation" pInputText formControlName="companyValuation"
+      placeholder="Digite o valor da empresa:" aria-label="Digite o valor da empresa:"
+      appCurrencyMask
+      />
+  </fieldset>
+  <p-button 
+    [label]="formTypeLabel() + ' cliente'" type="submit" 
+    [disabled]="!form.valid"  fluid="true"
+  ></p-button>
+</form>

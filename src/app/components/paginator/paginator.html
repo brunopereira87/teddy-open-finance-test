@@ -1,0 +1,15 @@
+@if(totalPages() > 1) {
+  <nav class="paginator">
+    
+  @for(page of displayPages; track $index) {
+    @if (page !== '...') {
+      <button 
+        (click)="goToPage(page)"
+        [class.active]="page === currentPage()">
+        {{ page }}
+      </button>
+    } @else {
+      <span>...</span>}
+  }
+</nav>
+}

@@ -1,0 +1,23 @@
+.info-clients {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p, span {
+    font-size: 1.125rem;
+  }
+}
+
+app-clients-list {
+  margin-top: 0.625rem;
+}
+
+app-paginator {
+  display: block;
+  margin-top: 1.2rem;
+}
+
+.create-client-button{
+  display: block;
+  margin-top: 1.2rem;
+}

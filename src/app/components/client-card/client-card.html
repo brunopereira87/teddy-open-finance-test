@@ -1,1 +1,27 @@
-<p>client-card works!</p>
+<h5>{{ client().name }}</h5>
+<p class="salary-label">
+  <span class="salary-label">Salário: </span>
+  <span class="salary-value">{{ client().salary | currency: "BRL"}}</span>
+</p>
+<p class="company-label">
+  <span class="company-label">Empresa: </span>
+  <span class="company-value">{{ client().companyValuation | currency: "BRL" }}</span>
+</p>
+<div class="actions">
+  @if(client().selected) {
+    <button class="deselect-client" (click)="onDeselectClient()">
+      <img src="img/minus.png" />
+    </button>
+  }
+  @else {
+    <button class="select-client" (click)="onSelectClient()">
+      <img src="img/plus.png" />
+    </button>
+    <button class="edit-client" (click)="onEditClient()">
+      <img src="img/pencil.png" />
+    </button>
+    <button class="remove-client" (click)="onRemoveClient()">
+      <img src="img/trash.png" />
+    </button>
+  }
+</div>

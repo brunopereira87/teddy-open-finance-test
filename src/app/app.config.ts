@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, LOCALE_ID, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
@@ -7,6 +7,10 @@ import  Aura from '@primeng/themes/aura';
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(ptBr);
 const myPreset = definePreset(Aura, {
     semantic: {
         primary: {
@@ -36,6 +40,7 @@ export const appConfig: ApplicationConfig = {
         theme: {
             preset: myPreset
         }
-    })
+    }),
+    { provide: LOCALE_ID, useValue: 'pt-BR' }
   ]
 };

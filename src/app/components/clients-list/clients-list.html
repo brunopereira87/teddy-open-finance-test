@@ -1,1 +1,3 @@
-<p>clients-list works!</p>
+@for(client of clients(); track client.id) {
+  <app-client-card [client]="client"></app-client-card>
+}

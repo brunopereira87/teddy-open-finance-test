@@ -1,0 +1,30 @@
+.paginator {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  button {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: .875rem;
+    font-weight: 700;
+
+    span {
+      font-size: .875rem;
+      font-weight: 700;
+    }
+    
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &.active {
+      background-color: var(--p-orange-500);
+      color: white;
+      border-color: var(--p-orange-500);
+    }
+  }
+}
